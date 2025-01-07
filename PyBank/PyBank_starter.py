@@ -22,7 +22,10 @@ with open(file_to_load) as financial_data:
     header = next(reader)
 
     # Extract first row to avoid appending to net_change_list
-
+    first_row = next(reader)
+    total_months += 1
+    total_net += int(first_row[1])
+    previous_net = int(first_row[1])
 
     # Track the total and net change
 
